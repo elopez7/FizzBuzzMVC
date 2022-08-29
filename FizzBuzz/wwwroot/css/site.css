@@ -1,0 +1,116 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+:root {
+    --primary-color: #1d5888;
+    --secondary--color: #7dc7d9ff;
+    --dark-color: #292929;
+    --white-color: #dff3e4;
+}
+
+body {
+    color: var(--dark-color);
+    margin-bottom: 60px;
+}
+
+nav {
+    background-color: var(--dark-color);
+}
+
+footer {
+    background-color: var(--dark-color);
+}
+
+.bsicon {
+    color: purple;
+}
+
+.jsicon {
+    color: rgb(226, 211, 4);
+}
+
+.html5icon {
+    color: orangered;
+}
+
+.microsofticon {
+    color: #4d82B8;
+}
+
+.cssicon {
+    color: rgb(11, 82, 214)
+}
+
+.checklist > li i {
+    color: var(--secondary--color);
+}
+
+main > .container {
+    padding: 60px 15px 0;
+    margin-bottom: 5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--primary-color)
+}
+
+footer {
+    padding-right: 1rem;
+}
+
+footer .social > a {
+    color: var(--white-color);
+    opacity: 0.75;
+}
+
+footer .social > a:hover {
+    opacity: 0.9;
+    color: var(--secondary--color);
+}
+
+.sticky-footer {
+    position: sticky;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+td {
+    color: springgreen;
+}
+
+td[data-color-code='fizz'] {
+    color: orangered;
+}
+
+td[data-color-code='buzz'] {
+    color: yellow;
+}
+
+td[data-color-code='fizzbuzz'] {
+    color: lightblue;
+}

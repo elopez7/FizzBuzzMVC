@@ -1,0 +1,97 @@
+﻿@{
+    ViewData["Title"] = "The Code";
+}
+
+
+<main class="flex-shrink-0">
+    <div class="container py-5 px-5 mt-5">
+        <h2 class="border-1 border-bottom border-dark">The Code for APP NAME</h2>
+        <div class="row row-cols-1 row-cols-md-2">
+            <div class="col-lg-8">
+                <pre class="line-numbers">
+                <code class="language-csharp">
+                            using FizzBuzz.Models;
+
+                            namespace FizzBuzz.Services
+                            {
+                                public static class FizzBuzzServices
+                                {
+                                    public static FizzBuzzModel GetFizzBuzzService()
+                                    {
+                                        FizzBuzzModel model = new();
+
+                                        model.FizzValue = 3;
+                                        model.BuzzValue = 5;
+                                        return model;
+                                    }
+
+                                    public static void PostFizzBuzzService(FizzBuzzModel fizzBuzz)
+                                    {
+                                        List<string> fbItems = new();
+
+                                        bool isFizz;
+                                        bool isBuzz;
+
+                                        for (var i = 1; i <= 300; i++)
+                                        {
+                                            isFizz = (i % fizzBuzz.FizzValue == 0);
+                                            isBuzz = (i % fizzBuzz.BuzzValue == 0);
+
+                                            if (isFizz && isBuzz)
+                                            {
+                                                fbItems.Add("FizzBuzz");
+
+                                            }
+                                            else if (isFizz)
+                                            {
+                                                fbItems.Add("Fizz");
+                                            }
+                                            else if (isBuzz)
+                                            {
+                                                fbItems.Add("Buzz");
+                                            }
+                                            else
+                                            {
+                                                fbItems.Add(i.ToString());
+                                            }
+                                        }
+
+                                        fizzBuzz.Result = fbItems;
+                                    }
+                                }
+                            }
+
+                        </code>
+                    </pre>
+            </div>
+            <div class="col-lg-4">
+                <p>This is a summary of the code specific to FizzBuzz. Other MVC Code has been removed.</p>
+                <h5>FizzBuzzServices Class</h5>
+                <p>The <strong>FizzBuzzServices</strong> class contains all the functionality pertaining the FizzFuzz. The class is used by the <strong>IActionResult</strong> functions contained in the home controller.</p>
+                <br />
+                <h5>GetFizzBuzzService()</h5>
+                <p><strong>GetFizzBuzzService()</strong> is a function that creates a FizzBuzz object that is used by the FizzBuzz page to populate the form with place holder values</p>
+                <br />
+                <h5>PostFizzBuzzService()</h5>
+                <p><strong>PostFizzBuzzService()</strong> Takes a FizzBuzz model as an argument from the form located in the FizzBuzz page. It uses the fizz and fuzz values to generate a table of results.</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+@section Styles{
+    <link href="/css/prism.css" rel="stylesheet">
+}
+
+    @section Scripts{
+    <script src="/js/prism.js"></script>
+    <script>
+        Prism.plugins.NormalizeWhitespace.setDefaults({
+            'remove-trailing': true,
+            'remove-indent': true,
+            'left-trim': true,
+            'right-trim': true
+        })
+    </script>
+}
